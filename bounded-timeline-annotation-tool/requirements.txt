@@ -1,0 +1,7 @@
+eel
+bs4
+plotly
+numpy
+python-dateutil
+lxml
+nltk

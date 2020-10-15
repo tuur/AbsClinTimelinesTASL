@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ClinicalNarrativeTemporalAnnotation>
+<TEXT>Diagnosis:
+-----------------
+ulna fracture left after fall and collision while playing sports at 15-01-2016.
+
+Medical history:
+--------------------------
+None
+
+Technical examinations:
+-----------------------
+PREOPERATIVE
+.............
+RX lower arm left 25-01-2016
+In comparison with earlier visit on 15/1/2016:
+Checking of a comminuted fracture in the middle 1/3 part of the ulna diaphysis with conservative treatment:
+
+- unchanged slightly shifted position of the distal segment to ulary with regard to the proximal
+- no secundary shifting or angulation
+- the fracture lines are still sharply visible: no increase in callus
+
+POSTOPERATIVE
+.............
+RX lower arm left 28-01
+- good alignment of fracture fragments, good reduction of fracture. Good position of the materials, no signs of loosening.
+
+Current visit:
+---------------
+Your patient has received surgery on 28-01-2016. To stabilise the fracture, a plate and screw osteosynthesis was performed. Smooth procedure.
+
+No complications postoperatively resulting in patient discharge from the hospital in good condition.
+
+Further concerns:
+--------------
+- Mobilisation according to physiotherapy: stable
+- Analgesia depending on need
+Paracetemol 1g max 4x/day
+If needed, Ibuprofen 600mg, max 3x/d and max 6 days, during meal.
+If needed, Tramadol 50mg Co up to 4x1/d. Due to potential obstipation effect Movicol can be given, 1 sachet / day.
+- Clexane 40mg SC injection 1/d up to 10 days postoperative.    
+- The stitches were all intradermal with resobable wires. The tabs should be removed from 10 days post-operative, as soon as the wound allows.
+- Furthermore dry and aseptic wound care.
+
+We would like to see your patient for a check-up at the consultation of Prof. dr. NAME on 13-03-2016 at 3:45 PM. One hour before this appointment, the patient must report to the medical imaging department for a check-up radiography.
+
+Yours sincerely
+</TEXT>
+<TAGS>
+<EVENT id="E0" start="29" end="47" text="ulna fracture left" type="OCCURRENCE" modality="ACTUAL" sec_time_rel="BEFORE" polarity="POS" />
+<EVENT id="E1" start="54" end="58" text="fall" polarity="POS" type="OCCURRENCE" sec_time_rel="BEFORE" modality="ACTUAL" />
+<EVENT id="E2" start="63" end="72" text="collision" sec_time_rel="BEFORE" polarity="POS" modality="ACTUAL" type="OCCURRENCE" />
+<EVENT id="E3" start="87" end="93" text="sports" polarity="POS" type="OCCURRENCE" modality="ACTUAL" sec_time_rel="BEFORE" />
+<EVENT id="E5" start="235" end="252" text="RX lower arm left" modality="ACTUAL" sec_time_rel="BEFORE" polarity="POS" type="OCCURRENCE" />
+<EVENT id="E6" start="311" end="319" text="Checking" sec_time_rel="BEFORE" polarity="POS" type="OCCURRENCE" modality="ACTUAL" />
+<EVENT id="E7" start="395" end="417" text="conservative treatment" polarity="POS" type="OCCURRENCE" sec_time_rel="BEFORE" modality="ACTUAL" />
+<EVENT id="E8" start="422" end="457" text="unchanged slightly shifted position" sec_time_rel="BEFORE" polarity="POS" modality="ACTUAL" type="OCCURRENCE" />
+<EVENT id="E9" start="522" end="554" text="secundary shifting or angulation" modality="ACTUAL" sec_time_rel="BEFORE" type="OCCURRENCE" polarity="NEG" />
+<EVENT id="E10" start="606" end="624" text="increase in callus" sec_time_rel="BEFORE" type="OCCURRENCE" modality="ACTUAL" polarity="NEG" />
+<EVENT id="E11" start="654" end="666" text="RX lower arm" sec_time_rel="BEFORE" polarity="POS" modality="ACTUAL" type="OCCURRENCE" />
+<EVENT id="E12" start="685" end="716" text="alignment of fracture fragments" type="OCCURRENCE" modality="ACTUAL" polarity="POS" sec_time_rel="BEFORE" />
+<EVENT id="E13" start="723" end="744" text="reduction of fracture" polarity="POS" modality="ACTUAL" sec_time_rel="BEFORE" type="OCCURRENCE" />
+<EVENT id="E14" start="751" end="776" text="position of the materials" polarity="POS" sec_time_rel="BEFORE" type="OCCURRENCE" modality="ACTUAL" />
+<EVENT id="E4" start="781" end="799" text="signs of loosening" modality="ACTUAL" sec_time_rel="BEFORE" type="OCCURRENCE" polarity="NEG" />
+<EVENT id="E15" start="859" end="866" text="surgery" sec_time_rel="BEFORE" modality="ACTUAL" type="OCCURRENCE" polarity="POS" />
+<EVENT id="E16" start="911" end="941" text="plate and screw osteosynthesis" type="OCCURRENCE" modality="ACTUAL" polarity="POS" sec_time_rel="BEFORE" />
+<EVENT id="E17" start="979" end="1008" text="complications postoperatively" type="OCCURRENCE" sec_time_rel="BEFORE" modality="ACTUAL" polarity="NEG" />
+<EVENT id="E18" start="1030" end="1039" text="discharge" modality="ACTUAL" polarity="POS" type="OCCURRENCE" sec_time_rel="BEFORE" />
+<EVENT id="E19" start="1113" end="1125" text="Mobilisation" sec_time_rel="BEFORE" modality="ACTUAL" polarity="POS" type="OCCURRENCE" />
+<EVENT id="E20" start="1163" end="1172" text="Analgesia" polarity="POS" sec_time_rel="BEFORE" type="OCCURRENCE" modality="ACTUAL" />
+<EVENT id="E21" start="1191" end="1202" text="Paracetemol" sec_time_rel="BEFORE" modality="ACTUAL" polarity="POS" type="OCCURRENCE" />
+<EVENT id="E22" start="1228" end="1237" text="Ibuprofen" modality="ACTUAL" polarity="POS" sec_time_rel="BEFORE" type="OCCURRENCE" />
+<EVENT id="E23" start="1294" end="1302" text="Tramadol" type="OCCURRENCE" modality="ACTUAL" sec_time_rel="BEFORE" polarity="POS" />
+<EVENT id="E24" start="1360" end="1367" text="Movicol" polarity="POS" sec_time_rel="BEFORE" modality="ACTUAL" type="OCCURRENCE" />
+<EVENT id="E25" start="1400" end="1407" text="Clexane" type="OCCURRENCE" sec_time_rel="BEFORE" polarity="POS" modality="ACTUAL" />
+<EVENT id="E26" start="1469" end="1477" text="stitches" polarity="POS" modality="ACTUAL" sec_time_rel="BEFORE" type="OCCURRENCE" />
+<EVENT id="E27" start="1525" end="1547" text="tabs should be removed" type="OCCURRENCE" sec_time_rel="BEFORE" modality="ACTUAL" polarity="POS" />
+<EVENT id="E28" start="1620" end="1646" text="dry and aseptic wound care" type="OCCURRENCE" modality="ACTUAL" polarity="POS" sec_time_rel="BEFORE" />
+<EVENT id="E29" start="1689" end="1697" text="check-up" sec_time_rel="BEFORE" type="OCCURRENCE" polarity="POS" modality="ACTUAL" />
+<EVENT id="E30" start="1813" end="1819" text="report" polarity="POS" modality="ACTUAL" type="OCCURRENCE" sec_time_rel="BEFORE" />
+<EVENT id="E31" start="1860" end="1868" text="check-up" polarity="POS" sec_time_rel="BEFORE" type="OCCURRENCE" modality="ACTUAL" />
+<EVENT id="E32" start="1869" end="1880" text="radiography" modality="ACTUAL" type="OCCURRENCE" polarity="POS" sec_time_rel="BEFORE" />
+<TIMEX3 id="T0" start="253" end="263" text="15-01-2016" mod="NA" type="DATE" />
+<TIMEX3 id="T1" start="300" end="308" text="5/1/2016" type="DATE" mod="NA" />
+<TIMEX3 id="T2" start="672" end="677" text="18-01" mod="NA" type="DATE" />
+<TIMEX3 id="T3" start="870" end="880" text="18-01-2016" mod="NA" type="DATE" />
+</TAGS>
+</ClinicalNarrativeTemporalAnnotation>

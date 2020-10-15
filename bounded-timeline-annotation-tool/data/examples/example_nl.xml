@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClinicalNarrativeTemporalAnnotation>
+<TEXT>
+Probleemstelling:
+-----------------
+middiafysaire ulnafractuur links na val en botsing bij het sporten op 15-01-2016.
+
+Medische voorgeschiedenis:
+--------------------------
+blanco
+
+Technische onderzoeken:
+-----------------------
+PREOPERATIEF
+.............
+RX onderarm links 25-01-2016
+In vergelijking met voorgaande opnamen van 15/1/2016:
+
+Controle van een comminutieve fractuur in het middenste 1/3 gedeelte van de ulna diafyse waarvoor conservatieve behandeling:
+
+- onveranderde licht verplaatste stand van het distale segment naar ulnair ten opzichte van het proximale
+- geen secundaire verplaatsing of angulatie.
+- de fractuurlijnen zijn nog scherp aflijnbaar: geen toegenomen callusvorming
+
+POSTOPERATIEF
+.............
+RX onderarm links 28-01
+- goed alignatie van fractuur fragmenten, goede reductie fractuur. Goede stand van materiaal, zonder tekenen van loosening.
+
+Huidige opname:
+---------------
+Uw patient werd op 28-01-2016 geopereerd. Ter stabilisatie van de fractuur werd een plaat en schroefosteosynthese verricht. Vlotte procedure.
+
+Ongecompliceerd postoperatief verloop waardoor uw patient dezelfde dag in goede algemene toestand het ziekenhuis kon verlaten.
+
+Verdere zorgen:
+--------------
+- Mobilisatie volgens kinevoorschrift: oefenstabiel
+- Analgesie naar nood:
+Paracetemol 1g max 4x/dag
+Zo nodig associatie Ibuprofen 600mg, max 3x/d en max 6 dagen, bij maaltijd.
+Zo nodig associatie Tramadol 50mg Co tot 4x1/d. Gezien obstiperend effect kan Movicol zakjes, 1 zakje per dag, worden bijgegeven.
+- Clexane 40mg SC injectie 1/d tot 10 dagen postoperatief.
+- De hechtingen werden intradermaal aangebracht met resobeerbare draad. De lusjes dienen verwijderd te worden vanaf 10 dagen postoperatief, zodra de wonde het toelaat.
+- Verder droge en aseptische wondzorg.
+
+Graag zien we uw patient ter controle terug op de raadpleging van Dr. NAME op 13-03-2016 om 15u45. Een uur voor deze afspraak dient de patient zich aan te melden op de dienst medische beeldvorming voor een controle radiografie.
+
+Met collegiale hoogachting
+</TEXT>
+<TAGS>
+<EVENT end="69" id="E0" lowerbound-end="2016-01-28 07:30" lowerbound-start="2016-01-15 12:14" modality="ACTUAL" most-likely-end="2016-01-28 09:00" most-likely-start="2016-01-15 18:59" polarity="POS" sec_time_rel="BEFORE" start="37" temporally-annotated="YES" text="middiafysaire ulnafractuur links" type="PROBLEM" upperbound-end="2016-01-28 14:00" upperbound-start="2016-01-16 00:59"/>
+<EVENT end="76" id="E1" lowerbound-duration="0Y0M0D0H1m" lowerbound-end="2016-01-15 12:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H1m" most-likely-end="2016-01-15 19:00" polarity="POS" sec_time_rel="BEFORE" start="73" temporally-annotated="YES" text="val" type="OCCURRENCE" upperbound-duration="0Y0M0D0H1m" upperbound-end="2016-01-16 01:00"/>
+<EVENT end="87" id="E2" lowerbound-duration="0Y0M0D0H1m" lowerbound-end="2016-01-15 12:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H1m" most-likely-end="2016-01-15 19:00" polarity="POS" sec_time_rel="BEFORE" start="80" temporally-annotated="YES" text="botsing" type="OCCURRENCE" upperbound-duration="0Y0M0D0H1m" upperbound-end="2016-01-16 01:00"/>
+<EVENT end="103" id="E3" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-15 12:00" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-15 18:00" polarity="POS" sec_time_rel="BEFORE" start="96" temporally-annotated="YES" text="sporten" type="OCCURRENCE" upperbound-duration="0Y0M0D3H0m" upperbound-start="2016-01-15 22:00"/>
+<EVENT end="324" id="E4" lowerbound-duration="0Y0M0D0H30m" lowerbound-start="2016-01-15 13:15" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-15 20:00" polarity="POS" sec_time_rel="BEFORE" start="306" temporally-annotated="YES" text="voorgaande opnamen" type="OCCURRENCE" upperbound-duration="0Y0M0D3H0m" upperbound-start="2016-01-16 23:00"/>
+<EVENT end="349" id="E6" lowerbound-duration="0Y0M0D0H5m" lowerbound-start="2016-01-25 08:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H10m" most-likely-start="2016-01-25 10:00" polarity="POS" sec_time_rel="BEFORE" start="341" temporally-annotated="YES" text="Controle" type="OCCURRENCE" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-01-25 20:30"/>
+<EVENT end="464" id="E7" lowerbound-end="2016-01-28 07:30" lowerbound-start="2016-01-25 08:15" modality="ACTUAL" most-likely-end="2016-01-28 09:00" most-likely-start="2016-01-25 10:00" polarity="POS" sec_time_rel="BEFORE" start="439" temporally-annotated="YES" text="conservatieve behandeling" type="OCCURRENCE" upperbound-end="2016-01-28 14:00" upperbound-start="2016-01-25 20:30"/>
+<EVENT end="505" id="E8" lowerbound-duration="0Y0M0D0H5m" lowerbound-start="2016-01-25 08:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H10m" most-likely-start="2016-01-25 10:00" polarity="POS" sec_time_rel="BEFORE" start="469" temporally-annotated="YES" text="onveranderde licht verplaatste stand" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-01-25 20:30"/>
+<EVENT end="616" id="E9" lowerbound-duration="0Y0M0D0H5m" lowerbound-start="2016-01-25 08:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H10m" most-likely-start="2016-01-25 10:00" polarity="NEG" sec_time_rel="BEFORE" start="580" temporally-annotated="YES" text="secundaire verplaatsing of angulatie" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-01-25 20:30"/>
+<EVENT end="695" id="E10" lowerbound-duration="0Y0M0D0H5m" lowerbound-start="2016-01-25 08:15" modality="ACTUAL" most-likely-duration="0Y0M0D0H10m" most-likely-start="2016-01-25 10:00" polarity="NEG" sec_time_rel="BEFORE" start="671" temporally-annotated="YES" text="toegenomen callusvorming" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-01-25 20:30"/>
+<EVENT end="274" id="E11" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-25 08:00" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-25 09:00" polarity="POS" sec_time_rel="BEFORE" start="257" temporally-annotated="YES" text="RX onderarm links" type="TEST" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-25 19:00"/>
+<EVENT end="742" id="E12" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-28 07:30" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 09:00" polarity="POS" sec_time_rel="BEFORE" start="725" temporally-annotated="YES" text="RX onderarm links" type="TEST" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-28 14:00"/>
+<EVENT end="778" id="E15" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-28 07:30" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 09:00" polarity="POS" sec_time_rel="BEFORE" start="756" temporally-annotated="YES" text="alignatie van fractuur" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-28 14:00"/>
+<EVENT end="814" id="E16" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-28 07:30" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 09:00" polarity="POS" sec_time_rel="BEFORE" start="797" temporally-annotated="YES" text="reductie fractuur" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-28 14:00"/>
+<EVENT end="841" id="E17" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-28 07:30" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 09:00" polarity="POS" sec_time_rel="BEFORE" start="822" temporally-annotated="YES" text="stand van materiaal" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-28 14:00"/>
+<EVENT end="871" id="E18" lowerbound-duration="0Y0M0D0H15m" lowerbound-start="2016-01-28 07:30" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 09:00" polarity="NEG" sec_time_rel="BEFORE" start="850" temporally-annotated="YES" text="tekenen van loosening" type="EVIDENTIAL" upperbound-duration="0Y0M0D1H30m" upperbound-start="2016-01-28 14:00"/>
+<EVENT end="946" id="E19" lowerbound-duration="0Y0M0D0H30m" lowerbound-start="2016-01-28 07:00" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 08:00" polarity="POS" sec_time_rel="BEFORE" start="936" temporally-annotated="YES" text="geopereerd" type="TREATMENT" upperbound-duration="0Y0M0D3H0m" upperbound-start="2016-01-28 11:00"/>
+<EVENT end="1019" id="E20" lowerbound-duration="0Y0M0D0H30m" lowerbound-start="2016-01-28 07:00" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 08:00" polarity="POS" sec_time_rel="BEFORE" start="990" temporally-annotated="YES" text="plaat en schroefosteosynthese" type="TREATMENT" upperbound-duration="0Y0M0D3H0m" upperbound-start="2016-01-28 11:00"/>
+<EVENT end="1086" id="E21" lowerbound-duration="0Y0M0D0H30m" lowerbound-start="2016-01-28 07:00" modality="ACTUAL" most-likely-duration="0Y0M0D1H0m" most-likely-start="2016-01-28 08:00" polarity="POS" sec_time_rel="BEFORE" start="1049" temporally-annotated="YES" text="Ongecompliceerd postoperatief verloop" type="EVIDENTIAL" upperbound-duration="0Y0M0D3H0m" upperbound-start="2016-01-28 11:00"/>
+<EVENT end="1174" id="E22" lowerbound-duration="0Y0M0D0H1m" lowerbound-start="2016-01-28 15:00" modality="ACTUAL" most-likely-duration="0Y0M0D0H5m" most-likely-start="2016-01-28 17:00" polarity="POS" sec_time_rel="BEFORE" start="1151" temporally-annotated="YES" text="ziekenhuis kon verlaten" type="OCCURRENCE" upperbound-duration="0Y0M0D0H30m" upperbound-start="2016-01-28 22:00"/>
+<EVENT end="1221" id="E23" lowerbound-duration="0Y0M14D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y1M0D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1210" temporally-annotated="YES" text="Mobilisatie" type="TREATMENT" upperbound-duration="0Y3M0D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1271" id="E24" lowerbound-duration="0Y0M1D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M7D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1262" temporally-annotated="YES" text="Analgesie" type="TREATMENT" upperbound-duration="0Y0M14D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1294" id="E25" lowerbound-duration="0Y0M1D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M7D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1283" temporally-annotated="YES" text="Paracetemol" type="TREATMENT" upperbound-duration="0Y0M14D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1338" id="E26" lowerbound-duration="0Y0M1D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M7D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1329" temporally-annotated="YES" text="Ibuprofen" type="TREATMENT" upperbound-duration="0Y0M14D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1413" id="E27" lowerbound-duration="0Y0M0D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M2D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1405" temporally-annotated="YES" text="Tramadol" type="TREATMENT" upperbound-duration="0Y0M7D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1470" id="E28" lowerbound-duration="0Y0M0D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M2D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1463" temporally-annotated="YES" text="Movicol" type="TREATMENT" upperbound-duration="0Y0M7D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1524" id="E29" lowerbound-duration="0Y0M8D0H0m" lowerbound-start="2016-01-28 15:01" modality="PROPOSED" most-likely-duration="0Y0M10D0H0m" most-likely-start="2016-01-28 17:05" polarity="POS" sec_time_rel="AFTER" start="1517" temporally-annotated="YES" text="Clexane" type="TREATMENT" upperbound-duration="0Y0M12D0H0m" upperbound-start="2016-01-28 22:30"/>
+<EVENT end="1589" id="E30" lowerbound-duration="0Y0M0D0H5m" lowerbound-end="2016-01-28 07:30" modality="PROPOSED" most-likely-duration="0Y0M0D0H15m" most-likely-end="2016-01-28 09:00" polarity="POS" sec_time_rel="AFTER" start="1579" temporally-annotated="YES" text="hechtingen" type="TREATMENT" upperbound-duration="0Y0M0D1H0m" upperbound-end="2016-01-28 14:00"/>
+<EVENT end="1683" id="E31" lowerbound-duration="0Y0M0D0H5m" lowerbound-start="2016-02-07 16:00" modality="PROPOSED" most-likely-duration="0Y0M0D0H15m" most-likely-start="2016-02-10 16:00" polarity="POS" sec_time_rel="AFTER" start="1649" temporally-annotated="YES" text="lusjes dienen verwijderd te worden" type="TREATMENT" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-02-20 16:00"/>
+<EVENT end="1779" id="E32" lowerbound-end="2016-02-07 16:05" lowerbound-start="2016-01-28 07:00" modality="PROPOSED" most-likely-end="2016-02-10 16:15" most-likely-start="2016-01-28 08:00" polarity="POS" sec_time_rel="AFTER" start="1751" temporally-annotated="YES" text="droge en aseptische wondzorg" type="TREATMENT" upperbound-end="2016-02-20 17:00" upperbound-start="2016-01-28 11:00"/>
+<EVENT end="1819" id="E33" lowerbound-duration="0Y0M0D0H10m" lowerbound-start="2016-03-13 15:40" modality="PROPOSED" most-likely-duration="0Y0M0D0H30m" most-likely-start="2016-03-13 15:45" polarity="POS" sec_time_rel="AFTER" start="1811" temporally-annotated="YES" text="controle" type="OCCURRENCE" upperbound-duration="0Y0M0D1H0m" upperbound-start="2016-03-13 15:50"/>
+<EVENT end="1943" id="E34" lowerbound-duration="0Y0M0D0H1m" lowerbound-start="2016-03-13 14:40" modality="PROPOSED" most-likely-duration="0Y0M0D0H5m" most-likely-start="2016-03-13 14:45" polarity="POS" sec_time_rel="AFTER" start="1930" temporally-annotated="YES" text="aan te melden" type="OCCURRENCE" upperbound-duration="0Y0M0D0H10m" upperbound-start="2016-03-13 14:50"/>
+<EVENT end="2008" id="E35" lowerbound-end="2016-03-13 15:40" lowerbound-start="2016-03-13 14:41" modality="PROPOSED" most-likely-end="2016-03-13 15:45" most-likely-start="2016-03-13 14:50" polarity="POS" sec_time_rel="AFTER" start="1988" temporally-annotated="YES" text="controle radiografie" type="TEST" upperbound-end="2016-03-13 15:50" upperbound-start="2016-03-13 15:00"/>
+<TIMEX3 end="117" id="T0" mod="NA" start="107" text="15-01-2016" type="DATE" val="15-01-2016"/>
+<TIMEX3 end="285" id="T1" mod="NA" start="275" text="25-01-2016" type="DATE" val="25-01-2016"/>
+<TIMEX3 end="338" id="T2" mod="NA" start="329" text="15/1/2016" type="DATE" val="15-01-2016"/>
+<TIMEX3 end="748" id="T3" mod="NA" start="743" text="28-01" type="DATE" val="28-01-2016"/>
+<TIMEX3 end="935" id="T4" mod="NA" start="925" text="28-01-2016" type="DATE" val="28-01-2016"/>
+<TIMEX3 end="1119" id="T5" mod="NA" start="1107" text="dezelfde dag" type="DATE" val="28-01-2016"/>
+<TIMEX3 end="1572" id="T6" mod="NA" start="1546" text="tot 10 dagen postoperatief" type="DATE" val="07-02-2016"/>
+<TIMEX3 end="1712" id="T7" mod="NA" start="1690" text="10 dagen postoperatief" type="DATE" val="07-02-2016"/>
+<TIMEX3 end="1879" id="T8" mod="NA" start="1860" text="13-03-2016 om 15u45" type="DATE" val="13-03-2016 15:45"/>
+<TIMEX3 end="1907" id="T9" mod="NA" start="1885" text="uur voor deze afspraak" type="DATE" val="13-03-2016 14:45"/>
+</TAGS>
+</ClinicalNarrativeTemporalAnnotation>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temporal Annotation</title>
+    <script type="text/javascript" src="eel.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta http-Equiv="Cache-Control" Content="no-cache" />
+    <meta http-Equiv="Pragma" Content="no-cache" />
+    <meta http-Equiv="Expires" Content="0" />
+
+</head>
+
+
+<body onclick="eel.resetCopyMode();">
+
+
+
+<div class="split left document">       <!-- Document text visualization -->
+    <table>
+
+        <tr>
+
+            <td><select id="folder" onchange="SetFolder()"></select></td>
+            <td><select id="file" onchange="LoadSelectedFile()"></select></td>
+            <td><button onclick="PreviousFile()"> < </button></td>
+            <td><button onclick="NextFile()"> > </button></td>
+            <td><input type="text" id="search_text" style="width: 50pt;"></input></td>
+            <td><button id="search_button" onclick="Search()">&#x1F50D;</button></td>
+            <td><button id="propagation_button" onclick="Propagation()">propagation mode</button></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+    <h2 id="document-title"></h2>
+    <p id="document-text"></p>
+
+</div>
+
+<div class="split right">               <!-- Annotation Options -->
+  <div class="split top annotation">
+     <table>
+         <tr>
+             <td><img id="kul_logo" src="kul_logo.svg" onclick='window.open("http://liir.cs.kuleuven.be");'/></td>
+             <td><h2>Temporal Annotation</h2></td>
+         </tr>
+
+     </table>
+
+    <div id="annotation_div">
+        <table>
+            <tr>
+                <td><div id="event_string">admission</div></td>
+                <td><div id="copy_mode_text"></div></td>
+            </tr>
+        </table>
+
+
+
+      <!--<h4>
+          Start
+          <input type="radio" id="show_start_annotation" name="start_or_end" value="start" onchange="addStartEndSelection();">
+          End
+          <input type="radio" id="show_end_annotation" name="start_or_end" value="end" onchange="addStartEndSelection();">
+      </h4>-->
+
+        <div class="selector" id="start_selector" onclick="document.getElementById('show_start_annotation').checked= !document.getElementById('show_start_annotation').checked;refreshAnnotationOptions();"><input class="checkbox" type="checkbox" id="show_start_annotation" onchange="refreshAnnotationOptions();">Start</div>
+      <div id="start_annotation">
+
+      <table>
+          <tr>
+              <td>Most likely started at</td>
+              <td><input type="datetime-local" id="start-time" pattern="yyyy-mm-ddTHH:MM"/></td>
+              <td><button onclick="exactStart()" id="exact-start">exact start</button></td>
+
+          </tr>
+          <tr>
+              <td>Earliest at</td>
+              <td><input type="datetime-local" id="start-min" ></td>
+          </tr>
+          <tr>
+              <td>Latest at</td>
+              <td><input type="datetime-local" id="start-max" ></td>
+          </tr>
+      </table>
+    </div>
+
+      <div class="selector" id="end_selector" onclick="document.getElementById('show_end_annotation').checked=!document.getElementById('show_end_annotation').checked;refreshAnnotationOptions();"><input class="checkbox" type="checkbox" id="show_end_annotation" onchange="refreshAnnotationOptions();">End</div>
+      <div id="end_annotation">
+      <table>
+          <tr>
+              <td>Most likely ended at</td>
+              <td><input type="datetime-local" id="end-time" ></td>
+              <td><button onclick="exactEnd()" id="exact-end">exact end</button></td>
+          </tr>
+          <tr>
+              <td>Earliest at</td>
+              <td><input type="datetime-local" id="end-min" ></td>
+          </tr>
+          <tr>
+              <td>Latest at</td>
+              <td><input type="datetime-local" id="end-max" ></td>
+          </tr>
+      </table>
+      </div>
+
+      <div  class="selector" id="duration_selector" onclick="document.getElementById('show_duration_annotation').checked=!document.getElementById('show_duration_annotation').checked;refreshAnnotationOptions();"><input class="checkbox" type="checkbox" id="show_duration_annotation" onchange="refreshAnnotationOptions();">Duration</div>
+
+      <div id="duration_annotation">
+      <table>
+          <tr>
+              <td>Most likely took</td>
+              <td><select id="duration-Y"></select> <select id="duration-M"></select> <select id="duration-D"></select> <select id="duration-H"></select> <select id="duration-m"></select> </td>
+              <td><button onclick="exactDuration()" id="exact-duration">exact duration</button></td>
+        </tr><tr>
+          <td>At least</td>
+          <td><select id="min-duration-Y"></select> <select id="min-duration-M"></select> <select id="min-duration-D"></select> <select id="min-duration-H"></select> <select id="min-duration-m"></select></td>
+      </tr>
+      <tr>
+          <td>At most</td>
+          <td><select id="max-duration-Y"></select> <select id="max-duration-M"></select> <select id="max-duration-D"></select> <select id="max-duration-H"></select> <select id="max-duration-m"></select></td>
+      </tr>
+      </table>
+    </div>
+        <table width="50%">
+            <tr>
+                <td><button id="save_annotations_button" onclick="saveAnnotations()">Save annotations</button></td>
+                <td><button id="remove_annotations_button" onclick="eel.remove_selected_annotations_from_current_doc();">X</button></td>
+            </tr>
+        </table>
+
+    </div>
+  </div>
+
+  <div class="split bottom timeline" id="timeline-div"><!-- Timeline visualization -->
+
+  </div>
+</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+SetDataFolderSelection();
+AddDurationSelection();
+refreshAnnotationOptions();
+eel.resetCopyMode();
+
+
+function Search(){
+    var search_string = document.getElementById("search_text").value;
+    document.getElementById("search_text").style.backgroundColor = "orange";
+    eel.resetCopyMode();
+    eel.search_string_in_all_documents(search_string);
+}
+
+
+eel.expose(saveAnnotations);
+function saveAnnotations(){
+    console.log('!');
+    var startComponents = ["start-time","start-min","start-max"];
+    var endComponents = ["end-time", "end-min", "end-max"];
+    var durationComponents = ["duration-Y", "duration-M", "duration-D","duration-H", "duration-m","min-duration-Y", "min-duration-M", "min-duration-D","min-duration-H", "min-duration-m", "max-duration-Y", "max-duration-M", "max-duration-D","max-duration-H", "max-duration-m"];
+
+    var components = [];
+    var values = {};
+
+    if (document.getElementById("show_start_annotation").checked){
+        var components = components.concat(startComponents);
+    }
+    if (document.getElementById("show_end_annotation").checked) {
+        var components = components.concat(endComponents);
+    }
+    if (document.getElementById("show_duration_annotation").checked) {
+        var components = components.concat(durationComponents);
+    }
+
+    for (i = 0; i < components.length; i++) {
+        id = components[i];
+        console.log(id);
+        value = document.getElementById(id).value;
+
+        values[id] = value;
+        console.log(value);
+    }
+    eel.save_annotations(values);
+
+    }
+
+eel.expose(colorSaveButton);
+function colorSaveButton(color){
+    document.getElementById('save_annotations_button').style["border-color"] = color;
+}
+
+
+function roomForNewAnnotationTab(){
+    eel.pprint(document.getElementById('show_duration_annotation').checked);
+    eel.pprint(document.getElementById('show_start_annotation').checked);
+    eel.pprint(document.getElementById('show_end_annotation').checked);
+
+    if (document.getElementById('show_duration_annotation').checked + document.getElementById('show_start_annotation').checked + document.getElementById('show_end_annotation').checked > 1) {
+        alert("You cannot annotate the start AND the duration AND the end, you have to pick two of of three! Clicking on one of the headers (Start / End / Duration) will close the annotation and allow you to select a different one.");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+eel.expose(setDuration);
+function setDuration(duration){
+    if (!roomForNewAnnotationTab()){
+        return false;
+    }
+
+    document.getElementById('show_duration_annotation').checked = true;
+    refreshAnnotationOptions();
+
+    var durationComponents = ["duration-Y", "duration-M", "duration-D","duration-H", "duration-m","min-duration-Y", "min-duration-M", "min-duration-D","min-duration-H", "min-duration-m", "max-duration-Y", "max-duration-M", "max-duration-D","max-duration-H", "max-duration-m"];
+    for (i = 0; i < durationComponents.length; i++) {
+        element = document.getElementById(durationComponents[i]);
+        value = duration[i];
+        element.value = value;
+    }
+}
+
+
+eel.expose(showAnnotationInputs);
+function showAnnotationInputs(){
+    document.getElementById('annotation_div').style.display = "block";
+
+}
+
+eel.expose(hideAnnotationInputs);
+function hideAnnotationInputs(){
+    document.getElementById('annotation_div').style.display = "none";
+}
+
+
+function exactStart(){
+    var start_time = document.getElementById('start-time').value;
+    document.getElementById('start-min').value =start_time;
+    document.getElementById('start-max').value = start_time;
+}
+
+function exactEnd(){
+    var start_time = document.getElementById('end-time').value;
+    document.getElementById('end-min').value =start_time;
+    document.getElementById('end-max').value = start_time;
+}
+
+function exactDuration(){
+    var duration_types = ["duration-Y", "duration-M", "duration-D","duration-H", "duration-m"];
+    for (i = 0; i < duration_types.length; i++){
+        var value = document.getElementById(duration_types[i]).value;
+        document.getElementById("min-"+duration_types[i]).value = value;
+        document.getElementById("max-"+duration_types[i]).value = value;
+    }
+}
+
+
+eel.expose(setStart);
+function setStart(starts){
+    if (!roomForNewAnnotationTab()){
+        return false;
+    }
+    document.getElementById('show_start_annotation').checked = true;
+    refreshAnnotationOptions();
+    var startComponents = ["start-time","start-min","start-max"];
+    for (i = 0; i < startComponents.length; i++) {
+        element = document.getElementById(startComponents[i]);
+        value = starts[i];
+        element.value = value;
+    }
+}
+
+eel.expose(setEnd);
+function setEnd(ends){
+    if (!roomForNewAnnotationTab()){
+        return false;
+    }
+    document.getElementById('show_end_annotation').checked = true;
+    refreshAnnotationOptions();
+    var endComponents = ["end-time","end-min","end-max"];
+    for (i = 0; i < endComponents.length; i++) {
+        element = document.getElementById(endComponents[i]);
+        value = ends[i];
+        element.value = value;
+        console.log(ends);
+    }
+}
+
+
+eel.expose(colorEvent);
+function colorEvent(event_id, color){
+    document.getElementById(event_id).style.color = color;
+}
+
+eel.expose(boldEvent);
+function boldEvent(event_id){
+    document.getElementById(event_id).style["font-weight"] = "bold" ;
+}
+
+
+eel.expose(getTimelineDimensions);
+function getTimelineDimensions(){
+
+    var width = document.getElementById('timeline-div').clientWidth;
+    var height = document.getElementById('timeline-div').clientHeight;
+    return [width, height];
+}
+
+
+eel.expose(openFreshAnnotations);
+function openFreshAnnotations(){
+    document.getElementById("show_start_annotation").checked = false;
+    document.getElementById("show_end_annotation").checked = false;
+    document.getElementById("show_duration_annotation").checked = false;
+
+    document.getElementById("start-time").value = "";
+    document.getElementById("start-min").value = "";
+    document.getElementById("start-max").value = "";
+    document.getElementById("end-time").value = "";
+    document.getElementById("end-min").value = "";
+    document.getElementById("end-max").value = "";
+
+    durationElements = ["duration-Y", "duration-M", "duration-D","duration-H", "duration-m","min-duration-Y", "min-duration-M", "min-duration-D","min-duration-H", "min-duration-m", "max-duration-Y", "max-duration-M", "max-duration-D","max-duration-H", "max-duration-m"];
+    for (i = 0; i < durationElements.length; i++){
+        document.getElementById(durationElements[i]).value = "0";
+    }
+    refreshAnnotationOptions();
+}
+
+eel.expose(setEventText);
+function setEventText(current_event_id){
+    console.log('>>>' + current_event_id);
+    var eventTextElement = document.getElementById('event_string');
+    var currentEvent = document.getElementById(current_event_id);
+    eventTextElement.classList = currentEvent.classList;
+    eventTextElement.innerHTML = currentEvent.innerHTML;
+    eventTextElement.style.color = "#24abe7";
+}
+
+eel.expose(refreshAnnotationOptions);
+function refreshAnnotationOptions(){
+    var start_annotation_element = document.getElementById("start_annotation");
+    var end_annotation_element = document.getElementById("end_annotation");
+    var duration_annotation_element = document.getElementById("duration_annotation");
+
+
+    var show_start = document.getElementById("show_start_annotation").checked;
+    var show_end = document.getElementById("show_end_annotation").checked;
+    var show_duration = document.getElementById("show_duration_annotation").checked;
+    var num_checked_annotations = show_start + show_end + show_duration;
+    eel.pprint(num_checked_annotations);
+
+    if (show_start) {
+        start_annotation_element.style.display = "block";
+    }else{
+        start_annotation_element.style.display = "none";
+    }
+    if (show_end) {
+        end_annotation_element.style.display = "block";
+    }else{
+        end_annotation_element.style.display = "none";
+    }
+    if (show_duration) {
+        duration_annotation_element.style.display = "block";
+    }else{
+        duration_annotation_element.style.display = "none";
+    }
+
+    if (num_checked_annotations > 1) {
+        if (! show_start){
+            document.getElementById("start_selector").style.display = "none";
+        }
+        if (! show_end){
+            document.getElementById("end_selector").style.display = "none";
+
+        }
+        if (! show_duration){
+            document.getElementById("duration_selector").style.display = "none";
+        }
+
+        document.getElementById("save_annotations_button").style.display = "block";
+        document.getElementById("remove_annotations_button").style.display = "block";
+
+    } else {
+            document.getElementById("start_selector").style.display = "block";
+            document.getElementById("end_selector").style.display = "block";
+            document.getElementById("duration_selector").style.display = "block";
+            document.getElementById("save_annotations_button").style.display = "none";
+            document.getElementById("remove_annotations_button").style.display = "none";
+    }
+
+}
+
+
+function AddDurationSelection(){
+
+    var years_ids = ["min-duration-Y","duration-Y","max-duration-Y"];
+    addOptions(years_ids, 100, "years");
+
+    var months_ids = ["min-duration-M","duration-M","max-duration-M"];
+    addOptions(months_ids, 12, "months");
+
+    var days_ids = ["min-duration-D","duration-D","max-duration-D"];
+    addOptions(days_ids, 30, "days");
+
+    var hours_ids = ["min-duration-H","duration-H","max-duration-H"];
+    addOptions(hours_ids, 24, "hours");
+
+    var minutes_ids = ["min-duration-m","duration-m","max-duration-m"];
+    addOptions(minutes_ids, 60, "minutes");
+
+
+
+}
+
+eel.expose(popup);
+function popup(string){
+    alert(string);
+    document.getElementById("search_text").style.backgroundColor = "white";
+}
+
+
+function addOptions(elements, max_num, suffix){
+    elements.forEach(function(element) {
+        select = document.getElementById(element);
+        for (var i = 0; i<= max_num; i++){
+            var option = document.createElement('option');
+            option.value = i;
+            option.innerHTML = i + " " + suffix;
+            select.options.add(option);
+        }
+    });
+}
+
+
+
+function SetDataFolderSelection(){
+ var data_folder_structure = eel.get_data_directories()();
+ data_folder_structure.then( function(doc_structure){
+  var dirList = Object.keys(doc_structure);
+  var dirListElement = document.getElementById("folder");
+  while (dirListElement.options.length) {
+        dirListElement.remove(0);
+  }
+  for (i = 0; i < dirList.length; i++) {
+    var dir = new Option(dirList[i], i);
+    dirListElement.options.add(dir);
+  }
+  SetFolder();
+
+ });
+}
+
+function SetFolder(){
+var data_folder_structure = eel.get_data_directories()();
+ data_folder_structure.then( function(doc_structure){
+  var dirList = Object.keys(doc_structure);
+  var dirListElement = document.getElementById("folder");
+  var selectedDir = dirListElement.value;
+
+  var fileList = doc_structure[dirList[selectedDir]];
+  var fileListElement = document.getElementById("file");
+
+  while (fileListElement.options.length) {
+        fileListElement.remove(0);
+  }
+  for (i = 0; i < fileList.length; i++) {
+    var file = new Option(fileList[i], i);
+    fileListElement.options.add(file);
+  }
+  eel.set_dir(dirList[selectedDir]);
+  LoadSelectedFile();
+ });
+
+}
+
+
+eel.expose(refreshTimeLine);
+function refreshTimeLine(timelinefile){
+    var timeline_div = document.getElementById('timeline-div');
+    var iframe = '<iframe id="timeline-box" class="timeline-box" src="' + timelinefile + '"></iframe>'
+    timeline_div.innerHTML = iframe;
+
+}
+
+
+function NextFile(){
+  var fileListElement = document.getElementById("file");
+  var next = parseInt(fileListElement.value) + 1;
+
+  if (next < parseInt(fileListElement.length)) {
+    eel.pprint('next');
+    eel.set_file(next);
+    fileListElement.value = next;
+    LoadSelectedFile();
+  }
+}
+
+function Propagation(){
+    eel.set_propagation();
+    button_element = document.getElementById("propagation_button");
+    if (button_element.style.color=="green") {
+        button_element.style.removeProperty('color');
+        button_element.style.removeProperty('border');
+
+    } else {
+        button_element.style.color="green";
+        button_element.style.border="1px solid green";
+    }
+}
+
+
+function PreviousFile(){
+  var fileListElement = document.getElementById("file");
+  var previous = parseInt(fileListElement.value) - 1;
+  if (previous > -1) {
+    eel.set_file(previous);
+    fileListElement.value = previous;
+    LoadSelectedFile();
+  }
+}
+
+function LoadSelectedFile(){
+  var fileListElement = document.getElementById("file");
+  eel.set_file(fileListElement.value);
+  eel.load_current_document();
+}
+
+
+eel.expose(setDocument);
+function setDocument(d, title) {
+  document.getElementById("document-text").innerHTML = d;
+  document.getElementById("document-title").innerHTML = title;
+
+}
+
+eel.expose(resetCopyVisuals);
+function resetCopyVisuals(){
+    document.body.style.cursor = "default";
+    document.getElementById("copy_mode_text").innerHTML="";
+}
+
+eel.expose(setCopyVisuals);
+function setCopyVisuals(copymode){
+    if (copymode == "full"){
+        document.body.style.cursor = "cell";
+        document.getElementById("copy_mode_text").innerHTML="happens at the same time as";
+
+    } else if (copymode == "start"){
+        document.body.style.cursor = "sw-resize";
+        document.getElementById("copy_mode_text").innerHTML="starts at the same time as";
+    } else if (copymode == "start_at_end"){
+        document.body.style.cursor = "w-resize";
+        document.getElementById("copy_mode_text").innerHTML="starts at the end of";
+    } else if (copymode == "end"){
+        document.body.style.cursor = "se-resize";
+        document.getElementById("copy_mode_text").innerHTML="ends at the same time as";
+    } else if (copymode == "end_at_start"){
+        document.body.style.cursor = "e-resize";
+        document.getElementById("copy_mode_text").innerHTML="ends at the start of";
+    } else if (copymode == "duration"){
+        document.body.style.cursor = "col-resize";
+        document.getElementById("copy_mode_text").innerHTML="has the same duration as";
+    }
+
+}
+
+
+document.onkeypress = function (e) {
+    e = e || window.event;
+    // use e.keyCode
+    eel.pprint('KEY:' + e.keyCode);
+
+    if (document.activeElement == document.getElementById("search_text")){
+        return // to prevent copy modes to activate when a user is typing a search query in the search field
+    }
+
+    if (e.keyCode =="32"){ // 32 is space bar
+        if (document.body.style.cursor=="cell"){
+            eel.resetCopyMode();
+        } else{
+            eel.setCopyMode('full');
+        }
+    } else if (e.keyCode =="115"){ // 115 is 's'
+        if (document.body.style.cursor=="sw-resize" || document.body.style.cursor=="w-resize") { // if in start or start_at_end mode
+            eel.resetCopyMode();
+        } else if (document.body.style.cursor=="se-resize") { // if in end mode
+            eel.setCopyMode('end_at_start');
+        } else {
+            eel.setCopyMode('start');
+        }
+    } else if (e.keyCode =="101"){ // 101 is 'e'
+        if (document.body.style.cursor=="se-resize" || document.body.style.cursor=="e-resize") { // if in end or end_at_start mode
+            eel.resetCopyMode();
+        } else if (document.body.style.cursor=="sw-resize") { // if in start mode
+            eel.setCopyMode('start_at_end');
+        } else {
+            eel.setCopyMode('end');
+        }
+    } else if (e.keyCode =="100"){ // 100 is 'd'
+        if (document.body.style.cursor=="col-resize"){
+            eel.resetCopyMode();
+        } else{
+            eel.setCopyMode('duration');
+        }
+    }
+
+    if (e.keyCode =="13" && document.getElementById("save_annotations_button").style.display == "block"){
+        saveAnnotations();
+    }
+};
+
+</script>
+</html>
