@@ -1,5 +1,5 @@
 ## Towards Extracting Absolute Event Timelines From English Clinical Reports
-The repository contains the materials associated with the research on textual annotation and extraction of temporal information from (English clinical) texts, reported in the [open access publication](http://doi.org/10.1109/TASLP.2020.3027201) referenced below.
+The repository contains the materials associated with the research on textual annotation and extraction of temporal information from (English clinical) texts, reported in the [open access publication](http://doi.org/10.1109/TASLP.2020.3027201) referred to below.
 The materials can be used to develop the reported models, evaluate new models on the provided data, or annotate new data using the timeline annotation tool.
 
 ## What is here?
