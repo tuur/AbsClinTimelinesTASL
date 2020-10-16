@@ -1,4 +1,4 @@
-# BTime Tool
+# Absolute Event Timeline Annotation Tool
 This annotation scheme aims to capture temporal information present in text. It is annotated on top of given event mentions for which the temporal information is to be provided. It answers two questions: (1) what is the most likely time of each event in the text (absolute start and end calender points)? And (2), as very often temporal information in text is ambiguous or underspecified and there is uncertainty for the reader on the exact event time, within what bounds could the event have happened based on the text and the annotators background knowledge?
 
 ## What is included in this package?
