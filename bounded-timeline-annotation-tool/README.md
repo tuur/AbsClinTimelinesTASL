@@ -28,5 +28,5 @@ Feel free to email questions and remarks !
 
 ## Reference
 When using the tool for research resulting in a publication please reference the following article:
-> A. Leeuwenberg & M.-F. Moens (2020),*Towards Extracting Absolute Event Timelines From English Clinical Reports*, IEEE/ACM Transactions on Audio, Speech, and Language Processing.
+> A. Leeuwenberg & M.-F. Moens (2020), *Towards Extracting Absolute Event Timelines From English Clinical Reports*, IEEE/ACM Transactions on Audio, Speech, and Language Processing.
 
