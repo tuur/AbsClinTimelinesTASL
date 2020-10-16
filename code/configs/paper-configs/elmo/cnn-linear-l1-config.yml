@@ -1,0 +1,92 @@
+# Experiment Configuration
+# --------------------
+gpu: 3
+experiment_name: "cnn-linear-l1"
+regressor_type: LinearRegressor # SoftmaxPowerRegression # ClusterRegression  # SigmoidRegressor or NaryRegressor
+phases: {
+2: {
+                trained_parameters_regex: ".*",
+                losses: d_l1,
+                predict_start: True,
+                predict_duration: True 
+          },
+0: {
+                trained_parameters_regex: ".*",
+                losses: s_anchor,
+                predict_start: True,
+                predict_duration: False
+          },
+1: {
+               trained_parameters_regex: ".*",
+               losses: s_l1,
+               predict_start: True,
+               predict_duration: False 
+}}
+
+lstm_dim: 0
+cnn_filters: 75
+cnn_window_sizes: 2, 4, 6
+max_events_in_batch: 32
+lr: .0001 #0.0001
+
+course_eval: 1
+#----- Data
+train_data_path: "./data/Final/train+dev/" # contains annotated xmls
+test_data_path: "./data/Final/test_gt/" # contains unannotated xmls
+unlabeled_txt: "./data/mimic/mimic_out.txt"
+
+# ----- Task Hyperparameters
+normalize_timeline: True
+
+max_duration: 52560000 # 52560000 minutes is around 100 year
+earliest_time:
+  year: 1900
+  month: 1
+  day: 1
+  hour: 1
+  minute: 1
+
+latest_time:
+  year: 2100
+  month: 1
+  day: 1
+  hour: 1
+  minute: 1
+
+# ----- General Model Hyperparameters
+
+model_type: ShiftBasedModel # Baseline # ShiftBasedModel # AttentionTimelineModel #AttentionTimelineModel #AbsoluteTimelineModel # MinimalAttATLM #AttATLM # ClassicATLM or MinimalATLM
+number_arity: 25
+character_dim: 0
+span_dim: 50
+wemb_dim: 0
+key_dim: 0
+unk_threshold: 0
+linear_reshaper: False
+shift: True
+context_size: 1
+glove: False #"./elmo/glove.model"
+elmo_weights: "elmo/elmo_clinical/mimic_wiki.hdf5" 
+elmo_options: "elmo/elmo_clinical/options.json" 
+verbose: 0
+
+# ----- Training Hyperparameters
+max_number_of_epochs: 200
+max_training_event_batch_size: 1000
+patience: 50
+development_set_size: 25
+output_train_pred_xmls: 1
+train_metrics: "Po"
+clip: 3
+dropout: 0.25
+checkpoint: 50
+
+tied_parameters_regex: '(elmo)|(glove)|(classes)|(clusters)'
+
+
+predict_duration: True
+predict_start: True
+
+
+
+
