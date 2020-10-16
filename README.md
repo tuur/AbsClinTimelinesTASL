@@ -11,7 +11,7 @@ This repository contains the following materials:
 
 ## Reference
 If you use any of the provided materials in your research, please cite the following reference:
-> A. Leeuwenberg and Marie-Francine Moens, *Towards Extracting Absolute Event Timelines From English Clinical Reports*, IEEE/ACM Transactions on Audio, Speech, and Language Processing.
+> A. Leeuwenberg and Marie-Francine Moens (2020), *Towards Extracting Absolute Event Timelines From English Clinical Reports*, IEEE/ACM Transactions on Audio, Speech, and Language Processing.
 
 ### Questions?
 > Any questions or remarks? Feel free to send an email!
