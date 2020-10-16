@@ -27,6 +27,6 @@ https://github.com/keighrim/mae-annotation (we used v0.9.3).
 Feel free to email questions and remarks !
 
 ## Reference
-When using the tool for publication please refer to the following corresponding reference:
-> *Towards Extracting Absolute Event Timelines From English Clinical Reports*, A. Leeuwenberg & M.-F. Moens (2020), IEEE/ACM Transactions on Audio, Speech, and Language Processing.
+When using the tool for research resulting in a publication please reference the following article:
+> A. Leeuwenberg & M.-F. Moens (2020),*Towards Extracting Absolute Event Timelines From English Clinical Reports*, IEEE/ACM Transactions on Audio, Speech, and Language Processing.
 
