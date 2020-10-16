@@ -5,7 +5,7 @@ The materials can be used to develop the reported models, evaluate new models on
 ## What is here?
 This repository contains the following materials:
 - The code: used to develop and evaluate the models in the article.
-- The data: the timeline annotations (in tsv format, the texts can be obtained from the [i2b2 temporal challenge data](https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/))
+- The data: the timeline annotations (in tsv format, the texts can be obtained [here](https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/)).
 - The annotation tool: with installation instructions, and example documents.
 - The annotation guidelines.
 
