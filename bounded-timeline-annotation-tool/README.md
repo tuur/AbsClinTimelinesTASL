@@ -18,8 +18,8 @@ python3 start.py
 Then the tool should open, and import all .xml files placed in the *data* directory and any subdirectories of that. 
 **Important:** Notice that when saving new annotations, these are directly written into the .xml files.
 
-# Starting from raw text?
-If you plan to annotate data yourself, starting from raw text, before using this tool event mentions need to be annotated.
+## Starting from raw text?
+If you plan to annotate new data starting from raw text, before using this timeline annotation tool, event mentions should be annotated.
 As this tool uses the xml format of the i2b2 2012 temporal challenge, the corresponding event annotation tool can be used:
 https://github.com/keighrim/mae-annotation (we used v0.9.3).
 
